@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "your_database";
+$servername = "assign2-db.c3ywmegyszf9.us-east-2.rds.amazonaws.com";
+$username = "dmathe17";
+$password = "dmathe17";
+$dbname = "assign2-db";
 
 // Create connection
 $conn = new mysql($servername, $username, $password, $dbname);
@@ -17,7 +17,7 @@ $student_id = mysqli_real_escape_string($conn, $_POST['student_id']);
 $student_grade = mysqli_real_escape_string($conn, $_POST['student_grade']);
 
 // Insert data into the database
-$sql = "INSERT INTO users (student_id, student_grade) VALUES ('$student_id', '$student_grade')";
+$sql = "INSERT INTO grade-list (student_id, student_grade) VALUES ('$student_id', '$student_grade')";
 
 if ($conn->query($sql) === TRUE) {
 echo "Data inserted successfully!";
