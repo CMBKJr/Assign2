@@ -17,7 +17,7 @@ $student_id = mysqli_real_escape_string($conn, $_POST['student_id']);
 $student_grade = mysqli_real_escape_string($conn, $_POST['student_grade']);
 
 // Insert data into the database
-$sql = "INSERT INTO grade-list (student_id, student_grade) VALUES ('$student_id', '$student_grade')";
+$sql = "INSERT INTO GradeList (student_id, student_grade) VALUES ('".$student_id."', '".$student_grade."')";
 
 if ($conn->query($sql) === TRUE) {
 echo "Data inserted successfully!";
