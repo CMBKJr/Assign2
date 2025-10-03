@@ -20,22 +20,13 @@ $student_grade = mysqli_real_escape_string($conn, $_POST['student_grade']);
 $sql = "INSERT INTO GradeList (student_id, student_grade) VALUES ('".$student_id."', '".$student_grade."')";
 
 if ($conn->query($sql) === TRUE) {
-echo "Data inserted successfully!";
+//echo "Data inserted successfully!";
 } else {
-echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-// SHOW DATABASE
-// Database connection
-$conn = new mysqli("localhost", "username", "password", "database_name");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+//echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 // Query to fetch grades by ID
-$sql = "SELECT student_id, grade FROM grades_table ORDER BY student_id";
+$sql = "SELECT student_id, student_grade FROM GradeList ORDER BY student_id";
 $result = $conn->query($sql);
 ?>
 <html>
@@ -51,7 +42,7 @@ $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // Output data for each row
             while ($row = $result->fetch_assoc()) {
-                echo "<li>Student ID: " . $row["student_id"] . " - Grade: " . $row["grade"] . "</li>";
+                echo "<li>Student ID: " . $row["student_id"] . " - Grade: " . $row["student_grade"] . "</li>";
             }
         } else {
             echo "<li>No grades found.</li>";
