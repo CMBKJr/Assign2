@@ -5,7 +5,7 @@ $password = "dmathe17";
 $dbname = "assign2db";
 
 // Create connection
-$conn = new mysql($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
