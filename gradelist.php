@@ -2,7 +2,7 @@
 $servername = "assign2-db.c3ywmegyszf9.us-east-2.rds.amazonaws.com";
 $username = "dmathe17";
 $password = "dmathe17";
-$dbname = "assign2-db";
+$dbname = "assign2db";
 
 // Create connection
 $conn = new mysql($servername, $username, $password, $dbname);
